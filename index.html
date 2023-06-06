@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+  <style>
+
+
+
+    /* CSS Styles */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+  
+    .form-container {
+      width: 80%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+    }  
+  
+    .form-title {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .message-box-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .message-box {
+      width: 300px;
+      height: 40px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      outline: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h1 class="form-title">Form Example</h1>
+  
+    <form action="/submit" method="post">
+      <div class="message-box-container">
+        <label for="message">Message:</label>
+        <input type="text" id="message" class="message-box" name="message" placeholder="" readonly><br><br>
+      
+        <label for="message2">Message 2:</label>
+        <input type="text" id="message2" class="message-box" name="message2" placeholder="" readonly><br><br>
+      </div>
+      
+      <label for="userInput">User Input:</label>
+      <input type="text" id="userInput" name="userInput" placeholder="Enter your input" required><br><br>
+      
+      <label for="month">Month:</label>
+      <input type="number" id="month" name="month" min="1" max="12" required><br><br>
+      
+      <label for="day">Day:</label>
+      <input type="number" id="day" name="day" min="1" max="31" required><br><br>
+      
+      <label for="year">Year:</label>
+      <input type="number" id="year" name="year" min="1900" max="2099" required><br><br>
+      
+      <input type="submit" value="Send">
+    </form>
+  
+    <div>
+      <button onclick="window.location.href = 'https://incumbentPROGRESSIVE.github.io/TrapperKeeper/vm_world.html';">Go to Separate Page</button>\
+    </div>
+  </div>
+
+  <script>
+    var userInput = document.getElementById("userInput");
+    var messageBox = document.getElementById("message");
+    var messageBox2 = document.getElementById("message2");
+    var month = document.getElementById("month");
+    var day = document.getElementById("day");
+    var year = document.getElementById("year");
+
+    function newMessage() {
+      userInput.addEventListener("input", function() {
+        var message = userInput.value + " " + month.value + "/" + day.value + "/" + year.value;
+        messageBox.value = message;
+        messageBox2.value = message;
+      });
+    }
+
+    newMessage();
+  </script>
+</body>
