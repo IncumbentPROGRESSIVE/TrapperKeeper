@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blank Screen with IP Address and Subnet Mask</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			text-align: center;
+			font-size: 36px;
+			padding-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		var ipAddress = '';
+		var subnetMask = '';
+
+		// Get the IP address
+		fetch('https://api.ipify.org')
+			.then(response => response.text())
+			.then(data => {
+				ipAddress = data;
+
+				// Calculate the subnet mask
+				var ipSegments = ipAddress.split('.');
+				if (ipSegments.length === 4) {
+					var subnetMaskSegments = [];
+					for (var i = 0; i < 4; i++) {
+						var octet = parseInt(ipSegments[i]);
+						if (i === 0) {
+							subnetMaskSegments.push('255');
+						} else if (i === 3) {
+							subnetMaskSegments.push('0');
+						} else if (octet === 0) {
+							subnetMaskSegments.push('0');
+						} else if (octet < 128) {
+							subnetMaskSegments.push('128');
+						} else if (octet < 192) {
+							subnetMaskSegments.push('192');
+						} else if (octet < 224) {
+							subnetMaskSegments.push('224');
+						} else if (octet < 240) {
+							subnetMaskSegments.push('240');
+						} else if (octet < 248) {
+							subnetMaskSegments.push('248');
+						} else if (octet < 252) {
+							subnetMaskSegments.push('252');
+						} else if (octet < 254) {
+							subnetMaskSegments.push('254');
+						} else {
+							subnetMaskSegments.push('255');
+						}
+					}
+					subnetMask = subnetMaskSegments.join('.');
+				}
+
+				// Display the IP address and subnet mask
+				document.body.innerHTML = '<p>Your IP address is: ' + ipAddress + '</p><p>Your subnet mask is: ' + subnetMask + '</p>';
+			})
+			.catch(error => console.error(error));
+	</script>
+</body>
+</html>
