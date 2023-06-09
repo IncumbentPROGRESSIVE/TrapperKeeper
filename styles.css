@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Roboto Mono;
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,21 +10,18 @@ body {
 }
 
 .container {
-  width: 90%; /* Increased width */
-  max-width: 800px; /* Increased max-width */
-  margin: 40px auto;
-  padding: 30px; /* Increased padding */
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
   border-radius: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  display: flex; 
-  justify-content: center; 
-  flex-direction: column; 
+  text-align: center;
 }
 
 .form-container {
   width: 100%;
-  padding: 30px; /* Increased padding */
+  padding: 20px;
   border: 1px solid #ccc;
   text-align: left;
   display: flex;
@@ -35,12 +32,11 @@ body {
 
 .form-container label, .form-container input, .message-box-container label, .message-box-container input {
   width: 100%;
-  margin-bottom: 25px; /* Increased bottom margin */
+  margin-bottom: 10px;
 }
 
 input[type=submit], button {
-  margin-top: 40px; /* Increased top margin */
-  margin-bottom: 40px; /* Increased bottom margin */
+  margin-top: 20px;
   height: 40px;
   background-color: #008CBA;
   color: white;
@@ -55,7 +51,6 @@ input[type=submit]:hover, button:hover {
 
 @media (max-width: 768px) {
   .container, .form-container {
-    width: 95%; /* Increased width */
+    width: 80%;
   }
 }
-
