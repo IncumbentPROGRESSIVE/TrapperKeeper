@@ -3,92 +3,40 @@
 <head>
   <title>Form Example</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <style>
-
-
-
-    /* CSS Styles */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-  
-    .form-container {
-      width: 80%;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 40px;
-      background-color: #f2f2f2;
-      display: flex;
-      flex-direction: column;
-    }  
-  
-    .form-title {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-
-    .message-box-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: 0;
-}
-
-  
-    .message-box {
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  outline: none;
-  box-sizing: border-box;
-}
-
-
-  </style>
 </head>
 
 <body>
-  <div class="form-container">
+  <div class="container">
     <h1 class="form-title">Form Example</h1>
   
-    <form action="/submit" method="post">
+    <form class="form-container" action="/submit" method="post">
       <div class="message-box-container">
         <label for="message">Message:</label>
-        <input type="text" id="message" class="message-box" name="message" placeholder="" readonly><br><br>
+        <input type="text" id="message" class="message-box" name="message" placeholder="" readonly>
       
         <label for="message2">Message 2:</label>
-        <input type="text" id="message2" class="message-box" name="message2" placeholder="" readonly><br><br>
+        <input type="text" id="message2" class="message-box" name="message2" placeholder="" readonly>
       </div>
       
       <label for="userInput">User Input:</label>
-      <input type="text" id="userInput" name="userInput" placeholder="Enter your input" required><br><br>
+      <input type="text" id="userInput" name="userInput" placeholder="Enter your input" required>
       
       <label for="month">Month:</label>
-      <input type="number" id="month" name="month" min="1" max="12" required><br><br>
+      <input type="number" id="month" name="month" min="1" max="12" required>
       
       <label for="day">Day:</label>
-      <input type="number" id="day" name="day" min="1" max="31" required><br><br>
+      <input type="number" id="day" name="day" min="1" max="31" required>
       
       <label for="year">Year:</label>
-      <input type="number" id="year" name="year" min="1900" max="2099" required><br><br>
+      <input type="number" id="year" name="year" min="1900" max="2099" required>
       
       <input type="submit" value="Send">
     </form>
   
-    <div>
-      <button onclick="window.location.href = 'https://incumbentPROGRESSIVE.github.io/TrapperKeeper/vm_world.html';">Go to Separate Page</button>\
-    </div>
+    <button onclick="window.location.href = 'https://incumbentPROGRESSIVE.github.io/TrapperKeeper/vm_world.html';">Go to Separate Page</button>
   </div>
 
-  <script>
-   src="index.js"
-  </script>
+  <script src="index.js"></script>
 </body>
+</html>
+
